@@ -1,3 +1,10 @@
+.StyledTextComponent {
+  font-family: "Inter", sans-serif;
+  padding-left: .5rem;
+  background-color: 369;
+  color: #fff;
+}
+
 .App {
   text-align: center;
 }
@@ -32,6 +39,7 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }

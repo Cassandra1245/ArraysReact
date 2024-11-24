@@ -1,24 +1,30 @@
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
 
 function App() {
+
+  const [array, setArray] = useState([
+    { Matricula: '1425BTY', Marca: 'Peugeot', Modelo: '3008', Tipo: 'híbrido' },
+    { Matricula: '1762MNY', Marca: 'Mercedes', Modelo: 'EQS', Tipo: 'Diesel' },
+    { Matricula: '9882TPK', Marca: 'Renault', Modelo: '4 E-Tech', Tipo: 'Eléctrico' },
+    { Matricula: '6634TRV', Marca: 'Volswagen', Modelo: 'Golf', Tipo: 'Gasolina' },
+    { Matricula: '2285RPL', Marca: 'Toyota', Modelo: 'RAV4', Tipo: 'hibrido' },
+    { Matricula: '1782PRT', Marca: 'Peugeot', Modelo: '5008', Tipo: 'diesel' }
+  ]);
+
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+        <p>Autos:</p>
+        <div>
+          {array.map((auto, index) => (
+            <div key={index} className="StyledTextComponent">
+              <p>{auto.Matricula} - {auto.Marca} {auto.Modelo}({auto.Tipo})</p>
+            </div>
+          ))}
+        </div>
+      </header >
+    </div >
   );
 }
 
